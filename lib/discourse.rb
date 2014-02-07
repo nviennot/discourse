@@ -60,6 +60,8 @@ module Discourse
   end
 
   def self.assets_digest
+    return Digest::MD5.hexdigest('1234')
+
     @assets_digest ||= begin
       digest = Digest::MD5.hexdigest(ActionView::Base.assets_manifest.assets.values.sort.join)
 

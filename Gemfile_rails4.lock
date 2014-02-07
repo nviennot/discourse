@@ -1,4 +1,20 @@
 GIT
+  remote: git://github.com/nviennot/promiscuous.git
+  revision: e0b47a906cb42e20e9bc066a181b4b08733aa449
+  branch: master
+  specs:
+    promiscuous (0.91.0)
+      activemodel (>= 3)
+      activesupport (>= 3)
+      algorithms (~> 0.6.1)
+      amq-protocol (>= 1.8.0)
+      bunny (>= 0.10.7)
+      fnv (= 0.2.0)
+      multi_json (~> 1.8.0)
+      redis (~> 3.0.2)
+      ruby-progressbar (~> 1.2.0)
+
+GIT
   remote: https://github.com/dysania/onebox.git
   revision: 6a2f6e6a08f183a4df52f9a51187f566b8ae3a00
   specs:
@@ -55,6 +71,8 @@ GEM
     airbrake (3.1.2)
       activesupport
       builder
+    algorithms (0.6.1)
+    amq-protocol (1.9.2)
     annotate (2.6.0)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -70,6 +88,8 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.1.4)
+    bunny (1.1.2)
+      amq-protocol (>= 1.9.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     certified (0.1.1)
@@ -115,6 +135,7 @@ GEM
     ffi (1.9.3)
     flamegraph (0.0.5)
       fast_stack
+    fnv (0.2.0)
     fog (1.18.0)
       builder
       excon (~> 0.28.0)
@@ -308,6 +329,7 @@ GEM
       rspec-mocks (~> 2.14.0)
     ruby-hmac (0.4.0)
     ruby-openid (2.3.0)
+    ruby-progressbar (1.2.0)
     ruby-readability (0.5.7)
       guess_html_encoding (>= 0.0.4)
       nokogiri (>= 1.4.2)
@@ -444,6 +466,7 @@ DEPENDENCIES
   onebox!
   openid-redis-store
   pg (= 0.15.1)
+  promiscuous!
   pry-nav
   pry-rails
   puma

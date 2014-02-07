@@ -15,6 +15,9 @@ class Post < ActiveRecord::Base
   include RateLimiter::OnCreateRecord
   include Trashable
 
+  include Promiscuous::Publisher
+  publish :user_id, :topic_id, :raw
+
   rate_limit
   rate_limit :limit_posts_per_day
 

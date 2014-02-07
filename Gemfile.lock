@@ -1,18 +1,18 @@
 GIT
-  remote: git://github.com/SamSaffron/seed-fu.git
-  revision: 502c8b8514df3bf028c9231cc3a6ea3cff4f37f0
+  remote: git://github.com/nviennot/promiscuous.git
+  revision: e0b47a906cb42e20e9bc066a181b4b08733aa449
+  branch: master
   specs:
-    seed-fu (2.2.0)
-      activerecord (>= 3.1, < 4.1)
-      activesupport (>= 3.1, < 4.1)
-
-GIT
-  remote: git://github.com/sporkrb/spork-rails.git
-  revision: 0dd45e59d3237b4c8f9efc215b46d9c07072a95e
-  specs:
-    spork-rails (4.0.0)
-      rails (>= 3.0.0, < 5)
-      spork (>= 1.0rc0)
+    promiscuous (0.91.0)
+      activemodel (>= 3)
+      activesupport (>= 3)
+      algorithms (~> 0.6.1)
+      amq-protocol (>= 1.8.0)
+      bunny (>= 0.10.7)
+      fnv (= 0.2.0)
+      multi_json (~> 1.8.0)
+      redis (~> 3.0.2)
+      ruby-progressbar (~> 1.2.0)
 
 GIT
   remote: https://github.com/SamSaffron/sprockets.git
@@ -26,28 +26,16 @@ GIT
       tilt (~> 1.1, != 1.3.0)
 
 GIT
-  remote: https://github.com/SamSaffron/vestal_versions
-  revision: 007b30a5274db7db55da745a4482243559247782
+  remote: https://github.com/dysania/onebox.git
+  revision: 6a2f6e6a08f183a4df52f9a51187f566b8ae3a00
   specs:
-    vestal_versions (1.2.3)
-      activerecord (> 3.0)
-      activesupport (> 3.0)
-
-GIT
-  remote: https://github.com/callahad/omniauth-browserid.git
-  revision: af62d667626c1622de6fe13b60849c3640765ab1
-  branch: observer_api
-  specs:
-    omniauth-browserid (0.0.2)
-      faraday
-      multi_json
-      omniauth (~> 1.0)
-
-GIT
-  remote: https://github.com/lawrencepit/email_reply_parser.git
-  revision: 67408dfb1b99fb8d5f145f782b9e22d1851a8e5a
-  specs:
-    email_reply_parser (0.6)
+    onebox (1.1.0)
+      hexpress (~> 1.2)
+      moneta (~> 0.7)
+      multi_json (~> 1.7)
+      mustache (~> 0.99)
+      nokogiri (~> 1.6.1)
+      opengraph_parser (~> 0.2.3)
 
 PATH
   remote: vendor/gems/discourse_plugin
@@ -58,12 +46,6 @@ PATH
   remote: vendor/gems/rails_multisite
   specs:
     rails_multisite (0.0.1)
-
-PATH
-  remote: vendor/gems/simple_handlebars_rails
-  specs:
-    simple_handlebars_rails (0.0.1)
-      rails (> 3.1)
 
 GEM
   remote: https://rubygems.org/
@@ -108,6 +90,8 @@ GEM
     airbrake (3.1.2)
       activesupport
       builder
+    algorithms (0.6.1)
+    amq-protocol (1.9.2)
     annotate (2.6.0)
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
@@ -122,6 +106,8 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.0.4)
+    bunny (1.1.2)
+      amq-protocol (>= 1.9.2)
     celluloid (0.15.2)
       timers (~> 1.1.0)
     certified (0.1.1)
@@ -130,8 +116,8 @@ GEM
     daemons (1.1.9)
     debug_inspector (0.0.2)
     diff-lcs (1.2.5)
-    diffy (3.0.1)
     docile (1.1.1)
+    email_reply_parser-discourse (0.6)
     ember-data-source (0.14)
       ember-source
     ember-rails (0.14.1)
@@ -167,6 +153,7 @@ GEM
     ffi (1.9.3)
     flamegraph (0.0.5)
       fast_stack
+    fnv (0.2.0)
     fog (1.18.0)
       builder
       excon (~> 0.28.0)
@@ -181,16 +168,15 @@ GEM
     fspath (2.0.6)
     given_core (3.1.1)
       sorcerer (>= 0.3.7)
+    guess_html_encoding (0.0.9)
     handlebars-source (1.1.2)
     hashie (2.0.5)
+    hexpress (1.2.0)
     highline (1.6.20)
     hike (1.2.3)
     hiredis (0.4.5)
-    html_truncator (0.3.1)
-      nokogiri (~> 1.5)
     httpauth (0.2.0)
     i18n (0.6.9)
-    ice_cube (0.11.1)
     image_optim (0.9.1)
       exifr (~> 1.1.3)
       fspath (~> 2.0.5)
@@ -230,6 +216,7 @@ GEM
     mocha (0.14.0)
       metaclass (~> 0.0.1)
     mock_redis (0.10.0)
+    moneta (0.7.20)
     msgpack (0.5.7)
     multi_json (1.8.2)
     multipart-post (1.2.0)
@@ -237,7 +224,7 @@ GEM
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
-    nokogiri (1.6.0)
+    nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
     oauth (0.4.7)
     oauth2 (0.8.1)
@@ -250,6 +237,10 @@ GEM
     omniauth (1.1.4)
       hashie (>= 1.2, < 3)
       rack
+    omniauth-browserid-discourse (0.0.2)
+      faraday
+      multi_json
+      omniauth (~> 1.0)
     omniauth-cas (1.0.4)
       addressable (~> 2.3)
       nokogiri (~> 1.6)
@@ -271,10 +262,13 @@ GEM
     omniauth-twitter (1.0.1)
       multi_json (~> 1.3)
       omniauth-oauth (~> 1.0)
+    opengraph_parser (0.2.3)
+      addressable
+      nokogiri
     openid-redis-store (0.0.2)
       redis
       ruby-openid
-    pg (0.17.0)
+    pg (0.15.1)
     pg-hstore (1.2.0)
     polyglot (0.3.3)
     progress (3.0.0)
@@ -335,24 +329,8 @@ GEM
       json (~> 1.4)
     redcarpet (3.0.0)
     redis (3.0.6)
-    redis-actionpack (3.2.4)
-      actionpack (~> 3.2.0)
-      redis-rack (~> 1.4.4)
-      redis-store (~> 1.1.4)
-    redis-activesupport (3.2.4)
-      activesupport (~> 3.2.0)
-      redis-store (~> 1.1.0)
     redis-namespace (1.4.1)
       redis (~> 3.0.4)
-    redis-rack (1.4.4)
-      rack (~> 1.4.0)
-      redis-store (~> 1.1.4)
-    redis-rails (3.2.4)
-      redis-actionpack (~> 3.2.4)
-      redis-activesupport (~> 3.2.4)
-      redis-store (~> 1.1.4)
-    redis-store (1.1.4)
-      redis (>= 2.2)
     ref (1.0.5)
     rest-client (1.6.7)
       mime-types (>= 1.16)
@@ -377,6 +355,10 @@ GEM
       rspec-mocks (~> 2.14.0)
     ruby-hmac (0.4.0)
     ruby-openid (2.3.0)
+    ruby-progressbar (1.2.0)
+    ruby-readability (0.6.0)
+      guess_html_encoding (>= 0.0.4)
+      nokogiri (>= 1.4.2)
     sanitize (2.0.6)
       nokogiri (>= 1.4.4)
     sass (3.2.12)
@@ -384,6 +366,9 @@ GEM
       railties (~> 3.2.0)
       sass (>= 3.1.10)
       tilt (~> 1.3)
+    seed-fu-discourse (2.2.0)
+      activerecord (>= 3.1, < 4.1)
+      activesupport (>= 3.1, < 4.1)
     shoulda (3.5.0)
       shoulda-context (~> 1.0, >= 1.0.1)
       shoulda-matchers (>= 1.4.1, < 3.0)
@@ -398,10 +383,7 @@ GEM
       redis-namespace (>= 1.3.1)
     sidekiq-failures (0.2.2)
       sidekiq (>= 2.9.0)
-    sidetiq (0.4.3)
-      celluloid (>= 0.14.1)
-      ice_cube (~> 0.11.0)
-      sidekiq (~> 2.15.0)
+    simple-rss (1.3.1)
     simplecov (0.8.2)
       docile (~> 1.1.0)
       multi_json
@@ -417,6 +399,9 @@ GEM
     slop (3.4.7)
     sorcerer (1.0.2)
     spork (1.0.0rc4)
+    spork-rails (4.0.0)
+      rails (>= 3.0.0, < 5)
+      spork (>= 1.0rc0)
     strong_parameters (0.2.1)
       actionpack (~> 3.0)
       activemodel (~> 3.0)
@@ -462,9 +447,8 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   certified
-  diffy (>= 3.0)
   discourse_plugin!
-  email_reply_parser!
+  email_reply_parser-discourse
   ember-rails
   ember-source (~> 1.2.0.1)
   eventmachine
@@ -479,7 +463,6 @@ DEPENDENCIES
   handlebars-source (~> 1.1.2)
   highline
   hiredis
-  html_truncator
   image_optim
   image_sorcery
   librarian (>= 0.0.25)
@@ -494,21 +477,23 @@ DEPENDENCIES
   nokogiri
   oj
   omniauth
-  omniauth-browserid!
+  omniauth-browserid-discourse
   omniauth-cas
   omniauth-facebook
   omniauth-github
   omniauth-oauth2
   omniauth-openid
   omniauth-twitter
+  onebox!
   openid-redis-store
-  pg
+  pg (= 0.15.1)
+  promiscuous!
   pry-nav
   pry-rails
   puma
   qunit-rails
   rack-cors
-  rack-mini-profiler (= 0.9.0.pre)
+  rack-mini-profiler
   rack-protection
   rails (= 3.2.12)
   rails_multisite!
@@ -518,24 +503,23 @@ DEPENDENCIES
   rbtrace
   redcarpet
   redis
-  redis-rails
   rest-client
   rinku
   rspec-given
   rspec-rails
+  ruby-readability
   sanitize
   sass
   sass-rails
-  seed-fu!
+  seed-fu-discourse
   shoulda
   sidekiq (= 2.15.1)
   sidekiq-failures
-  sidetiq (>= 0.3.6)
-  simple_handlebars_rails!
+  simple-rss
   simplecov
   sinatra
   slim
-  spork-rails!
+  spork-rails
   sprockets!
   strong_parameters
   therubyracer
@@ -544,4 +528,3 @@ DEPENDENCIES
   uglifier
   unf
   unicorn
-  vestal_versions!
